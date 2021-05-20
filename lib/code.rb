@@ -12,4 +12,4 @@ class Code
             @secret_code << @available_colors.sample
         end 
     end
-end 
+end
