@@ -11,35 +11,31 @@ RSpec.describe do
     it 'has an intro' do
         message = Message.new
          
-        expect(message.game_intro).to eq("Welcome to Mastermind - would you like to (p)lay, (r)ead the instructions, or (q)uit?")
+        expect(message.game_intro).to eq("Would you like to (p)play, (r)read the instructions, or (q)quit?")
     end
 
     it 'has a bad intro choice' do
         message = Message.new
 
-        expect(message.intro_bad_choice).to eq("That is not a valid choice. Please choose (p)play, (r)ead the instructions, or (q)uit")
+        expect(message.intro_bad_choice).to eq("That is not a valid choice. Please choose (p)play, (r)read the instructions, or (q)quit")
     end
 
     it 'message to play' do
         message = Message.new
 
-        expect(message.play_message).to eq("I have generated a beginner sequence with four elements made up of: (r)ed, (g)reen, (b)lue, (y)ellow. Use (q) to quit at any time to end the game. What’s your guess?")
+        expect(message.play_message).to eq("I have generated a beginner sequence with four elements made up of:" + " " + "(r)ed".red + ", " + "(g)reen".green + ", " + "(b)lue".blue + ", " + "(y)ellow".yellow + ". Use (q) to quit at any time to end the game. What’s your guess?")
     end
 
-    it 'confirms quit' do
+    it 'quit message' do
         message = Message.new
 
-        expect(message.quit_confirm).to eq("Ya sure?")
+        expect(message.quit_message).to eq("Thanks for playing!")
     end
 
     it 'has instructions' do
         message = Message.new
 
-        expect(message.instructions).to eq("The computer has selected a      secret combination of 4 colors and you have to guess that combination in 10 or fewer tries to win.
-
-        To create your guess, choose a combination of (r)ed, (g)reen, (b)lue, (y)ellow. **You can do doubles or triples** 
-
-        For each guess you will be told how many correct colors and correct spots are in your guess. You are not told which color(s) are correct and what spot(s) are correct.")
+        expect(message.instructions).to eq("I have generated a beginner sequence with four elements made up of: (r)ed,\n(g)reen, (b)lue, and (y)ellow. Use (q)uit at any time to end the game.\nWhat's your guess?")
         
     end 
 
