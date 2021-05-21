@@ -14,4 +14,5 @@ RSpec.describe 'game' do
 
         expect(game.start).to eq(puts @message.game_intro)
     end
+
 end
