@@ -14,20 +14,31 @@ class Game
         # quit = 
     end
 
-    def play
-        play = gets.chomp.downcase
-        if play == "p" || "play"
-        else 
-            puts @messages.intro_bad_choice
-        end
-    end
+    # def play
+    #     play = gets.chomp.downcase
+    #     if play == "p" || "play"
+    #     else play !=  "p" || "play"
+    #         puts @message.intro_bad_choice
+    #     end
+    #     require "pry";binding.pry
+    # end
 
-    def read
-        read = gets.chomp.downcase
-        if read == "r" || "read"
-            puts @messages.instructions
-        else 
-            puts @messages.intro_bad_choice
-        end
+    # def read
+    #     read = gets.chomp.downcase
+    #     if read == "r" || "read"
+    #         puts @message.instructions
+    #     else 
+    #         puts @message.intro_bad_choice
+    #     end
+    # end
+
+    # def quit
+    #     quit = gets.chomp.downcase
+    #     if quit == "q" || "quit"
+    #         puts @message.quit_confirm # need to add in a hard quit
+    #     else
+    #         puts @message.intro_bad_choice
+    #     end
+    # end
 
 end

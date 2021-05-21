@@ -1,4 +1,4 @@
-class Message 
+class Message
     def game_intro 
         "Welcome to Mastermind - would you like to (p)lay, (r)ead the instructions, or (q)uit?"
     end
