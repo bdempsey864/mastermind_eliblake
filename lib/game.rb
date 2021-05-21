@@ -1,4 +1,4 @@
-require './lib/messages'
+require './messages'
 
 class Game 
     def initialize
@@ -9,23 +9,30 @@ class Game
         # code = Code.new
         # code.make_secret_code
         puts @message.game_intro
-        # play = 
+        play_game 
         # read =
         # quit = 
     end
 
-    # def play
-    #     play = gets.chomp.downcase
-    #     if play == "p" || "play"
-    #     else play !=  "p" || "play"
-    #         puts @message.intro_bad_choice
-    #     end
-    #     require "pry";binding.pry
-    # end
+    def play_game
+        play = gets.chomp.downcase
+        until play ==  "p" || play == "r" || play == "q"
+            puts @message.intro_bad_choice
+            play = gets.chomp.downcase 
+        end
+        if play == "r"
+            puts @message.instructions
+        elsif play == "q"
+            puts @message.quit_message
+        else 
+            puts #method runs game
+            "cool beans"
+        end
+    end
 
     # def read
     #     read = gets.chomp.downcase
-    #     if read == "r" || "read"
+    #     play == "r" || "read"
     #         puts @message.instructions
     #     else 
     #         puts @message.intro_bad_choice
@@ -42,3 +49,6 @@ class Game
     # end
 
 end
+
+game = Game.new
+game.start

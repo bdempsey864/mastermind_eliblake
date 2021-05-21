@@ -1,26 +1,22 @@
 class Message
     def game_intro 
-        "Welcome to Mastermind - would you like to (p)lay, (r)ead the instructions, or (q)uit?"
+        "Welcome to Mastermind - would you like to (p)play, (r)read the instructions, or (q)quit?"
     end
 
     def intro_bad_choice
-        "That is not a valid choice. Please choose (p)play, (r)ead the instructions, or (q)uit"
+        "That is not a valid choice. Please choose (p)play, (r)read the instructions, or (q)quit"
     end
 
     def play_message
         "I have generated a beginner sequence with four elements made up of: (r)ed, (g)reen, (b)lue, (y)ellow. Use (q) to quit at any time to end the game. What’s your guess?"
     end
 
-    def quit_confirm
-        "Ya sure?"
+    def quit_message
+        "Thanks for playing"
     end
 
     def instructions
-        "The computer has selected a      secret combination of 4 colors and you have to guess that combination in 10 or fewer tries to win.
-
-        To create your guess, choose a combination of (r)ed, (g)reen, (b)lue, (y)ellow. **You can do doubles or triples** 
-
-        For each guess you will be told how many correct colors and correct spots are in your guess. You are not told which color(s) are correct and what spot(s) are correct."
+        "I have generated a beginner sequence with four elements made up of: (r)ed,\n(g)reen, (b)lue, and (y)ellow. Use (q)uit at any time to end the game.\nWhat's your guess?"
 
     end
 # fix string interpolation
