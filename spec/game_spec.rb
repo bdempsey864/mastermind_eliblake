@@ -11,6 +11,8 @@ RSpec.describe 'game' do
 
     it 'starts' do
         game = Game.new
+        @message = Message.new
+       
         
         
         expect(game.start).to eq(puts @message.game_intro)

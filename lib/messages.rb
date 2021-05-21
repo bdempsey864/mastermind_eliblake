@@ -1,6 +1,8 @@
+require 'colorize'
 class Message
+
     def game_intro 
-        "Welcome to Mastermind - would you like to (p)play, (r)read the instructions, or (q)quit?"
+        "Would you like to (p)play, (r)read the instructions, or (q)quit?"
     end
 
     def intro_bad_choice
@@ -8,11 +10,11 @@ class Message
     end
 
     def play_message
-        "I have generated a beginner sequence with four elements made up of: (r)ed, (g)reen, (b)lue, (y)ellow. Use (q) to quit at any time to end the game. What’s your guess?"
+        "I have generated a beginner sequence with four elements made up of:" + " " + "(r)ed".red + ", " + "(g)reen".green + ", " + "(b)lue".blue + ", " + "(y)ellow".yellow + ". Use (q) to quit at any time to end the game. What’s your guess?"
     end
 
     def quit_message
-        "Thanks for playing"
+        "Thanks for playing!"
     end
 
     def instructions
