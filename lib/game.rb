@@ -1,6 +1,7 @@
 require 'colorize'
 require './messages'
 require "./player"
+require './code'
 
 class Game 
     def initialize
@@ -10,12 +11,10 @@ class Game
     end
 
     def start
-        # code = Code.new
-        # code.make_secret_code
+        code = Code.new
+        code.make_secret_code
         puts @message.game_intro
         play_game 
-        # read =
-        # quit = 
     end
 
     def play_game
@@ -23,7 +22,7 @@ class Game
         until play ==  "p" || play == "r" || play == "q"
             puts @message.intro_bad_choice
             break
-            # play = gets.chomp.downcase 
+            play = gets.chomp.downcase 
         end
         if play == "r"
             puts @message.instructions
@@ -57,3 +56,5 @@ class Game
     # end
 
 end
+game = Game.new
+game.start
