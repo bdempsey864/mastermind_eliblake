@@ -11,12 +11,11 @@ class Game
         puts " "
         @message = Message.new
         @player = Player.new 
+        @code = Code.new
     end
 
-    def start
-        # code = Code.new
-        # code.make_secret_code
-       
+    def start 
+        @code.make_secret_code
         puts @message.game_intro
         intro_message
     end
@@ -39,9 +38,11 @@ class Game
     end
 
     def play_game
+        # until player.win? 
        @player.guess_code
-        puts @message.guess_message #(
-                #    @guessed_code,           correct_amount_of_elements, number_in_correct_position, number_of_guesses) 
+        puts @message.guess_message(@player.guessed_code, @player.correct_amount_of_elements(@code.secret_code), @player.number_in_correct_position(@code.secret_code)) #(
+            
+        #    @guessed_code,           correct_amount_of_elements, number_in_correct_position, number_of_guesses) 
     end
 
 end

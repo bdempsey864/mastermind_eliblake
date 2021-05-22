@@ -10,7 +10,6 @@ class Code
         4.times do
             @secret_code << @available_colors.sample
         end 
-
     end
 end
 

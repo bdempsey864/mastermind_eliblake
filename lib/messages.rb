@@ -1,5 +1,6 @@
 require 'colorize'
 require './code'
+require './player'
 
 class Message
 
@@ -36,9 +37,10 @@ class Message
         "please enter a correct color choice using (r)ed, (g)reen, (b)lue, (y)ellow"
     end 
 
-    def guess_message
-        "#{player.guessed_code} has 
-        #{player.correct_amount_of_elements} with #{player.number_in_correct_position} in the correct positions. You have taken #{'number_of_guesses'}. Please guess again:)"
+    def guess_message(player_guess, amount_correct, amount_correct_position)
+      #  require "pry"; binding.pry
+        "#{player_guess} has 
+        #{amount_correct} with #{amount_correct_position} in the correct positions. You have taken #{'number_of_guesses'}. Please guess again:)"
     end
 
     def win_message
@@ -46,3 +48,6 @@ class Message
     end
 
 end 
+
+
+
