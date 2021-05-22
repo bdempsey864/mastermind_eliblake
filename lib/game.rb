@@ -1,21 +1,21 @@
 require 'colorize'
 require './messages'
-require "./player"
+require './player'
+require './code'
 
 class Game 
     def initialize
         puts "WELCOME".yellow + " " + "TO".red + " " + "MASTER".green + " " + "MIND".blue
         puts " "
         @message = Message.new
+        @player = Player.new 
     end
 
     def start
-        # code = Code.new
-        # code.make_secret_code
+        code = Code.new
+        code.make_secret_code
         puts @message.game_intro
         play_game 
-        # read =
-        # quit = 
     end
 
     def play_game
@@ -38,22 +38,22 @@ class Game
 
 
 
-    # def read
-    #     read = gets.chomp.downcase
-    #     play == "r" || "read"
-    #         puts @message.instructions
-    #     else 
-    #         puts @message.intro_bad_choice
-    #     end
-    # end
+    def read
+        read = gets.chomp.downcase
+        play == "r" || "read"
+            puts @message.instructions
+        else 
+            puts @message.intro_bad_choice
+        end
+    end
 
-    # def quit
-    #     quit = gets.chomp.downcase
-    #     if quit == "q" || "quit"
-    #         puts @message.quit_confirm # need to add in a hard quit
-    #     else
-    #         puts @message.intro_bad_choice
-    #     end
-    # end
+    def quit
+        quit = gets.chomp.downcase
+        if quit == "q" || "quit"
+            puts @message.quit_confirm # need to add in a hard quit
+        else
+            puts @message.intro_bad_choice
+        end
+    end
 
 end

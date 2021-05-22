@@ -1,9 +1,15 @@
+require './code')
+
 class Player
     attr_reader :guessed_code, :secret_code
     def initialize
-        @secret_code = ["g", "r", "y", "g"]
+        code = Code.new
+        @secret_code = secret_code
+        # code.make_secret_code
+        #@secret_code = ["g", "r", "y", "g"]
         @guessed_code = []
     end
+
 
     def guess_code
         guess = gets.chomp
@@ -48,7 +54,3 @@ class Player
        return correct
     end
 end
-
-player = Player.new
-player.guess_code
-require "pry"; binding.pry

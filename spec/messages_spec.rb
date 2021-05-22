@@ -70,4 +70,12 @@ RSpec.describe do
         expect(message.win_message).to eq("Congratulations! You guessed #{'secret_code'}, in #{'number_of_guesses'} over #{'total_time'}.  Would you like to (p)lay again, or (q)uit?")
     end 
 
+    # it 'can cheat' do
+    #     message = Message.new
+    #     code = Code.new
+    #     code.make_secret_code
+        
+    #     expect(message.cheat(secret_code)).to eq(secret_code)
+    # end
+
 end
