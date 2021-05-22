@@ -38,11 +38,16 @@ class Game
     end
 
     def play_game
-        # until player.win? 
-       @player.guess_code
-        puts @message.guess_message(@player.guessed_code, @player.correct_amount_of_elements(@code.secret_code), @player.number_in_correct_position(@code.secret_code)) #(
-            
-        #    @guessed_code,           correct_amount_of_elements, number_in_correct_position, number_of_guesses) 
+        guess_count = 0
+        until @player.win?(@code.secret_code) || guess_count == 10
+            if @player.guess_code.length != 4
+                puts @message.incorrect_color
+            else 
+                guess_count += 1
+                puts @message.guess_message(@player.guessed_code, @player.correct_amount_of_elements(@code.secret_code), @player.number_in_correct_position(@code.secret_code), guess_count)
+                @player.guessed_code.clear
+            end 
+        end  
     end
 
 end

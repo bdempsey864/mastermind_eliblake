@@ -37,10 +37,9 @@ class Message
         "please enter a correct color choice using (r)ed, (g)reen, (b)lue, (y)ellow"
     end 
 
-    def guess_message(player_guess, amount_correct, amount_correct_position)
+    def guess_message(player_guess, amount_correct, amount_correct_position, guess_count)
       #  require "pry"; binding.pry
-        "#{player_guess} has 
-        #{amount_correct} with #{amount_correct_position} in the correct positions. You have taken #{'number_of_guesses'}. Please guess again:)"
+        "#{player_guess} has #{amount_correct} with #{amount_correct_position} in the correct positions. You have taken #{guess_count} guess. Please guess again:)"
     end
 
     def win_message

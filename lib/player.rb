@@ -18,7 +18,6 @@ class Player
 
     def win?(secret_code)
         @guessed_code == secret_code
-        code = code.secret_code
     end
 
     def correct_amount_of_elements(secret_code)
