@@ -4,8 +4,10 @@ class Player
     attr_reader :guessed_code, :secret_code
     def initialize
         @guessed_code = []
+        code = Code.new
+        code.make_secret_code
     end
-
+    require "pry"; binding.pry
 
     def guess_code
         guess = gets.chomp

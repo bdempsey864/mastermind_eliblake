@@ -14,9 +14,9 @@ class Game
     end
 
     def start
-        code = Code.new
-        code.make_secret_code
-        require "pry"; binding.pry
+        # code = Code.new
+        # code.make_secret_code
+       
         puts @message.game_intro
         intro_message
     end
