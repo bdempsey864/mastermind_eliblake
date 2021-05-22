@@ -37,8 +37,8 @@ class Message
     end 
 
     def guess_message
-        "#{'guessed_sequence'} has 
-        #{'number_of_correct_elements'} with #{'number_in_correct_position'} in the correct positions. You have taken #{'number_of_guesses'}. Please guess again:)"
+        "#{player.guessed_code} has 
+        #{player.correct_amount_of_elements} with #{player.number_in_correct_position} in the correct positions. You have taken #{'number_of_guesses'}. Please guess again:)"
     end
 
     def win_message

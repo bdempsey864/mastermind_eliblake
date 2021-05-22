@@ -2,7 +2,7 @@ class Code
     attr_reader :secret_code
 
     def initialize
-        @available_colors = ['r','b', 'g', 'y']
+        @available_colors = ['r', 'b', 'g', 'y']
         @secret_code = []
     end 
 
@@ -10,5 +10,7 @@ class Code
         4.times do
             @secret_code << @available_colors.sample
         end 
+
     end
 end
+

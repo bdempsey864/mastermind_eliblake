@@ -13,6 +13,7 @@ RSpec.describe 'code' do
         code.make_secret_code
 
         expect(code.secret_code.length).to eq(4)
+        require "pry"; binding.pry
     end
 
 end 

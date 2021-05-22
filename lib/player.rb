@@ -17,13 +17,16 @@ class Player
 
     def win?
         @guessed_code == @secret_code
+        code = code.secret_code
     end
 
     def correct_amount_of_elements
         correct = 0
         #reads top to bottom, still a couple bugs
-        @secret_code.each do |color2|        # ["g", "r", "y", "g"]
-            @guessed_code.each do |color1|   # ["b", "r", "y", "g"]
+        @secret_code.each do |color2|       
+             # ["g", "r", "y", "g"]
+            @guessed_code.each do |color1|  
+             # ["b", "r", "y", "g"]
                 if color1 == color2
                     correct += 1
                     break

@@ -4,6 +4,8 @@ require './player'
 require './code'
 
 class Game 
+    attr_reader :player,
+                :message
     def initialize
         puts "WELCOME".yellow + " " + "TO".red + " " + "MASTER".green + " " + "MIND".blue
         puts " "
@@ -14,11 +16,12 @@ class Game
     def start
         code = Code.new
         code.make_secret_code
+        require "pry"; binding.pry
         puts @message.game_intro
-        play_game 
+        intro_message
     end
 
-    def play_game
+    def intro_message
         play = gets.chomp.downcase
         until play ==  "p" || play == "r" || play == "q"
             puts @message.intro_bad_choice
@@ -31,31 +34,14 @@ class Game
             puts @message.quit_message
         else 
             puts @message.play_message
-            #method to play game
+            play_game
         end
     end
 
-
-
-
-    def read
-        read = gets.chomp.downcase
-        play == "r" || "read"
-            puts @message.instructions
-        else 
-            puts @message.intro_bad_choice
-        end
-    end
-
-    def quit
-        quit = gets.chomp.downcase
-        if quit == "q" || "quit"
-            puts @message.quit_confirm # need to add in a hard quit
-        else
-            puts @message.intro_bad_choice
-        end
+    def play_game
+       @player.guess_code
+        puts @message.guess_message #(
+                #    @guessed_code,           correct_amount_of_elements, number_in_correct_position, number_of_guesses) 
     end
 
 end
-game = Game.new
-game.start
