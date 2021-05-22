@@ -23,7 +23,7 @@ class Game
         until play ==  "p" || play == "r" || play == "q"
             puts @message.intro_bad_choice
             break
-            # play = gets.chomp.downcase 
+            play = gets.chomp.downcase 
         end
         if play == "r"
             puts @message.instructions
@@ -57,3 +57,5 @@ class Game
     end
 
 end
+game = Game.new
+game.start

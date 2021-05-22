@@ -1,12 +1,8 @@
-require './code')
+require './code'
 
 class Player
     attr_reader :guessed_code, :secret_code
     def initialize
-        code = Code.new
-        @secret_code = secret_code
-        # code.make_secret_code
-        #@secret_code = ["g", "r", "y", "g"]
         @guessed_code = []
     end
 
