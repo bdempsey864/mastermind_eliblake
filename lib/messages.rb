@@ -46,6 +46,10 @@ class Message
         "Congratulations! You guessed #{'secret_code'}, in #{'number_of_guesses'} over #{'total_time'}.  Would you like to (p)lay again, or (q)uit?"
     end
 
+    def too_many_guesses
+        "Unfortunately you have ran out of guesses. Go take a walk and try again."
+    end 
+
 end 
 
 
