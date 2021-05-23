@@ -21,7 +21,7 @@ class Message
     end
 
     def instructions
-        "I have generated a beginner sequence with four elements made up of: (r)ed,\n(g)reen, (b)lue, and (y)ellow. Use (q)uit at any time to end the game.\nWhat's your guess?"
+        "I have generated a beginner sequence with four elements made up of:" + " " + "(r)ed".red + "\n, " + "(g)reen".green + ", " + "(b)lue".blue + ", " + "(y)ellow".yellow + ". You must guess the sequence using a four character code. You will be given 10 guesses to guess the correct code. Use (q) to quit at any time to end the game.\n What’s your guess?"
 
     end
 # fix string interpolation
@@ -39,7 +39,7 @@ class Message
 
     def guess_message(player_guess, amount_correct, amount_correct_position, guess_count)
       #  require "pry"; binding.pry
-        "#{player_guess} has #{amount_correct} with #{amount_correct_position} in the correct positions. You have taken #{guess_count} guess. Please guess again:)"
+        "#{player_guess} has #{amount_correct} colors correct with #{amount_correct_position} in the correct positions. You have taken #{guess_count} guess. Please guess again:)"
     end
 
     def win_message

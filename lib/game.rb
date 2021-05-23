@@ -16,7 +16,6 @@ class Game
 
     def start 
         @code.make_secret_code
-        require "pry"; binding.pry
         puts @message.game_intro
         intro_message
     end
@@ -40,10 +39,11 @@ class Game
 
     def play_game
         guess_count = 0
+        # start_time = Time.now
         until @player.guessed_code == @code.secret_code || guess_count == 10
             if @player.guess_code.length != 4
                     puts @message.incorrect_color
-                @player.guessed_code.clear
+                @player.guessed_code.clear 
             else 
                 guess_count += 1
                     puts @message.guess_message(@player.guessed_code, @player.correct_amount_of_elements(@code.secret_code), @player.number_in_correct_position(@code.secret_code), guess_count)
@@ -52,9 +52,12 @@ class Game
         end
         if  guess_count == 10
                 puts @message.too_many_guesses
-        elsif
+        else
             @player.guessed_code == @code.secret_code
                 puts @message.win_message
         end 
+        # end_time = Time.now
+        # total_time = (end_time - start time).to_i.divmod(60)
+    
     end
 end
