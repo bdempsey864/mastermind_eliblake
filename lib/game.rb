@@ -20,8 +20,12 @@ class Game
         intro_message
     end
 
+    def input
+        gets.chomp.downcase
+    end
+
     def intro_message
-        play = gets.chomp.downcase
+        play = input
         until play ==  "p" || play == "r" || play == "q"
             puts @message.intro_bad_choice
             break
@@ -39,7 +43,7 @@ class Game
 
     def play_game
         guess_count = 0
-        # start_time = Time.now
+        start_time = Time.now
         until @player.guessed_code == @code.secret_code || guess_count == 10
             if @player.guess_code.length != 4
                     puts @message.incorrect_color
@@ -56,8 +60,9 @@ class Game
             @player.guessed_code == @code.secret_code
                 puts @message.win_message
         end 
-        # end_time = Time.now
-        # total_time = (end_time - start time).to_i.divmod(60)
-    
+        end_time = Time.now
+        time_played = (end_time - start_time).to_i.divmod(60)
+        time = "You played for #{time_played[0]} minutes and #{time_played[1]} seconds"
+        puts time
     end
 end
