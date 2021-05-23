@@ -25,9 +25,9 @@ class Message
 
     end
 # fix string interpolation
-    # def cheat(secret_code)
-    #     "secret code is #{secret_code}"
-    # end
+    def cheat(secret_code)
+        "secret code is #{secret_code}"
+    end
 
     def incorrect_length
         "please enter a valid code (4 characters)"

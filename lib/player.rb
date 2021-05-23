@@ -27,6 +27,7 @@ class Player
             @guessed_code.each do |color1|  
                 if color1 == color2
                     correct += 1
+                    # color2.delete_if { |color| color == color1 }
                     break
                 end
             end
