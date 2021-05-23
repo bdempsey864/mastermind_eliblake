@@ -1,5 +1,6 @@
 class Code
-    attr_reader :secret_code
+    attr_reader :secret_code, 
+                :available_colors
 
     def initialize
         @available_colors = ['r', 'b', 'g', 'y']
