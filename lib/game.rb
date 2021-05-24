@@ -12,6 +12,7 @@ class Game
         @message = Message.new
         @player = Player.new
         @code = Code.new
+        @lives = 10
     end
 
     def start
@@ -21,12 +22,12 @@ class Game
         intro_message
     end
 
-    def input
+    def game_input
         gets.chomp.downcase
     end
 
     def intro_message
-        play = input
+        play = game_input
         until play ==  "p" || play == "r" || play == "q"
             puts @message.intro_bad_choice
             break
@@ -34,6 +35,7 @@ class Game
         end
         if play == "r"
             puts @message.instructions
+            play_game
         elsif play == "q"
             puts @message.quit_message
         else
@@ -43,8 +45,8 @@ class Game
     end
 
     def play_game
-        guess_count = 0
         start_time = Time.now
+<<<<<<< HEAD
         until @player.guessed_code == @code.secret_code || guess_count == 10
             unless @player.guess_code.length == 4
                     puts @message.incorrect_color
@@ -65,5 +67,41 @@ class Game
         time_played = (end_time - start_time).to_i.divmod(60)
         time = "You played for #{time_played[0]} minutes and #{time_played[1]} seconds"
         puts time
+=======
+        if @lives > 0
+                if @player.guess_code.length != 4
+                    if game_input == "r"
+                        puts @message.instructions
+                    # elsif game_input == "c"
+                    #     puts "The secret code is #{@code.secret_code}"
+                    # elsif game_input == "q"
+                    #     puts @message.quit_message
+                    else  
+                        puts @message.incorrect_color
+                        @player.guessed_code.clear 
+                        play_game
+                    end
+                elsif @player.guessed_code == @code.secret_code
+                            end_time = Time.now
+                            @time_played = (end_time - start_time).to_i.divmod(60)
+                            puts @message.win_message(@code.secret_code, 
+                                              @lives, @time_played[0], 
+                                              @time_played[1])
+                else @lives -= 1
+                    puts @message.guess_message(@player.guessed_code, 
+                                                @player.correct_amount_of_elements(@code.secret_code), 
+                                                @player.number_in_correct_position(@code.secret_code), 
+                                                @lives)
+                    @player.guessed_code.clear
+                    play_game
+                end 
+        else
+            end_time = Time.now
+            @time_played = (end_time - start_time).to_i.divmod(60)
+            puts @message.game_over( @time_played[0], 
+                                     @time_played[1] )
+        end   
+>>>>>>> cc7cf736b230585b43876a12ba7826b98feeadf0
     end
+    
 end

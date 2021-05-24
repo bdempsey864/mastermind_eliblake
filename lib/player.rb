@@ -8,8 +8,12 @@ class Player
         # code.make_secret_code
     end
 
+    def input
+        gets.chomp.downcase
+    end
+
     def guess_code
-        guess = gets.chomp
+        guess = input
         #chars seperates into array
         guess.chars.each do |letter|
             @guessed_code << letter
@@ -23,8 +27,8 @@ class Player
     def correct_amount_of_elements(secret_code)
         correct = 0
         #reads top to bottom, still a couple bugs
-        secret_code.each do |color2|       
-            @guessed_code.each do |color1|  
+        secret_code.each do |color2|
+            @guessed_code.each do |color1|
                 if color1 == color2
                     correct += 1
                     # color2.delete_if { |color| color == color1 }
@@ -52,4 +56,3 @@ class Player
        return correct
     end
 end
-
