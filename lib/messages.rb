@@ -9,19 +9,19 @@ class Message
     end
 
     def intro_bad_choice
-        "That is not a valid choice. Please choose (p)play, (r)read the instructions, or (q)quit"
+        "That is not a valid choice.\nPlease choose (p)play, (r)read the instructions, or (q)quit"
     end
 
     def play_message
-        "I have generated a beginner sequence with four elements made up of:" + " " + "(r)ed".red + ", " + "(g)reen".green + ", " + "(b)lue".blue + ", " + "(y)ellow".yellow + ". Use (q) to quit at any time to end the game. What’s your guess?"
+        "I have generated a beginner sequence with four elements made up of:\n" + "(r)ed".red + ", " + "(g)reen".green + ", " + "(b)lue".blue + ", " + "(y)ellow".yellow + ".\nUse (q) to quit at any time to end the game.\nWhat’s your guess?"
     end
 
     def quit_message
-        "Thanks for playing!"
+        "Thanks for playing!".cyan
     end
 
     def instructions
-        "I have generated a beginner sequence with four elements made up of:" + " " + "(r)ed".red + "\n, " + "(g)reen".green + ", " + "(b)lue".blue + ", " + "(y)ellow".yellow + ". You must guess the sequence using a four character code. You will be given 10 lives to guess the correct code. Use (q) to quit at any time to end the game.\n What’s your guess?"
+        " I have generated a beginner sequence with four elements made up of:\n" + " " + "(r)ed".red + ", " + "(g)reen".green + ", " + "(b)lue".blue + ", " + "(y)ellow".yellow + ".\n You must guess the sequence using a four character code.\n You will be given 10 lives to guess the correct code.\n Use (q) to quit at any time to end the game.\n What’s your guess?"
 
     end
 # fix string interpolation
@@ -34,23 +34,22 @@ class Message
     end 
 
     def incorrect_color
-        "please enter a correct color choice using (r)ed, (g)reen, (b)lue, (y)ellow"
+        "Please enter a correct color choice using:\n" + "(r)ed".red + ", " + "(g)reen".green + ", " + "(b)lue".blue + ", " + "(y)ellow".yellow + ".\nUse (q) to quit at any time to end the game.\nWhat’s your guess?"
     end 
 
     def guess_message(player_guess, amount_correct, amount_correct_position, guess_count)
       #  require "pry"; binding.pry
-        "#{player_guess} has #{amount_correct} colors correct with #{amount_correct_position} in the correct positions. You have #{guess_count} lives left. Please guess again:)"
+        "#{player_guess}".magenta + " has #{amount_correct} colors correct with #{amount_correct_position} in the correct positions.\nYou have #{guess_count} lives left.\nPlease guess again:)"
     end
 
-    def win_message(secret_code)
-        "Congratulations! You guessed" + " " + "#{secret_code}".blue + ", in #{'number_of_guesses'} over #{'total_time'}.  Would you like to (p)lay again, or (q)uit?"
+    def win_message(secret_code, number_of_guesses, time_start, time_end)
+        "Congratulations!\nYou guessed" + " " + "#{secret_code}".blue + ", in #{number_of_guesses} over.\nYou played for #{time_start} minutes and #{time_end} seconds.\nWould you like to (p)lay again, or (q)uit?"
     end
 
-    def game_over
-        "Unfortunately you have ran out of guesses. Go take a walk and try again."
+    def game_over(time_start, time_end)
+        "Unfortunately you have ran out of guesses.\nIt took you #{time_start} minutes and #{time_end} seconds to fail.\nGo take a walk and try again."
     end 
 
 end 
-
 
 

@@ -8,8 +8,12 @@ class Player
         # code.make_secret_code
     end
 
+    def input
+        gets.chomp.downcase
+    end
+
     def guess_code
-        guess = gets.chomp
+        guess = input
         #chars seperates into array
         guess.chars.each do |letter|
             @guessed_code << letter
