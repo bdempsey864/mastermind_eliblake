@@ -17,7 +17,6 @@ class Game
 
     def start
         @code.make_secret_code
-        require "pry"; binding.pry
         puts @message.game_intro
         intro_message
     end
@@ -28,7 +27,7 @@ class Game
 
     def intro_message
         play = game_input
-        until play ==  "p" || play == "r" || play == "q"
+        until play ==  "p" || play == "r" || play == "q" || play == "c"
             puts @message.intro_bad_choice
             break
             play = gets.chomp.downcase
@@ -38,42 +37,27 @@ class Game
             play_game
         elsif play == "q"
             puts @message.quit_message
+        elsif play == "c"
+            puts "The secret code is #{@code.secret_code}"
+            play_game
         else
             puts @message.play_message
             play_game
         end
     end
 
+    # def restart_game
+    #     play_game
+    # end
+
     def play_game
         start_time = Time.now
-<<<<<<< HEAD
-        until @player.guessed_code == @code.secret_code || guess_count == 10
-            unless @player.guess_code.length == 4
-                    puts @message.incorrect_color
-                @player.guessed_code.clear
-            else
-                guess_count += 1
-                    puts @message.guess_message(@player.guessed_code, @player.correct_amount_of_elements(@code.secret_code), @player.number_in_correct_position(@code.secret_code), guess_count)
-                @player.guessed_code.clear
-            end
-        end
-        if  guess_count == 10
-                puts @message.too_many_guesses
-        else
-            @player.guessed_code == @code.secret_code
-                puts @message.win_message
-        end
-        end_time = Time.now
-        time_played = (end_time - start_time).to_i.divmod(60)
-        time = "You played for #{time_played[0]} minutes and #{time_played[1]} seconds"
-        puts time
-=======
         if @lives > 0
                 if @player.guess_code.length != 4
                     if game_input == "r"
                         puts @message.instructions
                     # elsif game_input == "c"
-                    #     puts "The secret code is #{@code.secret_code}"
+                        # puts "The secret code is #{@code.secret_code}"
                     # elsif game_input == "q"
                     #     puts @message.quit_message
                     else  
@@ -87,6 +71,10 @@ class Game
                             puts @message.win_message(@code.secret_code, 
                                               @lives, @time_played[0], 
                                               @time_played[1])
+                            @code.secret_code.clear
+                            @lives = 10
+                            start
+                            play_game
                 else @lives -= 1
                     puts @message.guess_message(@player.guessed_code, 
                                                 @player.correct_amount_of_elements(@code.secret_code), 
@@ -96,12 +84,11 @@ class Game
                     play_game
                 end 
         else
-            end_time = Time.now
-            @time_played = (end_time - start_time).to_i.divmod(60)
-            puts @message.game_over( @time_played[0], 
-                                     @time_played[1] )
+            # end_time = Time.now
+            # @time_played = (end_time - start_time).to_i.divmod(60)
+            # puts @message.game_over( @time_played[0], 
+            #                          @time_played[1] )
         end   
->>>>>>> cc7cf736b230585b43876a12ba7826b98feeadf0
     end
     
 end
