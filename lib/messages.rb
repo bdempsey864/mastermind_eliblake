@@ -4,7 +4,7 @@ require './player'
 
 class Message
 
-    def game_intro 
+    def game_intro
         "Would you like to (p)play, (r)read the instructions, or (q)quit?"
     end
 
@@ -31,11 +31,11 @@ class Message
 
     def incorrect_length
         "please enter a valid code (4 characters)"
-    end 
+    end
 
     def incorrect_color
         "please enter a correct color choice using (r)ed, (g)reen, (b)lue, (y)ellow"
-    end 
+    end
 
     def guess_message(player_guess, amount_correct, amount_correct_position, guess_count)
       #  require "pry"; binding.pry
@@ -48,9 +48,6 @@ class Message
 
     def too_many_guesses
         "Unfortunately you have ran out of guesses. Go take a walk and try again."
-    end 
+    end
 
-end 
-
-
-
+end
