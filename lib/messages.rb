@@ -21,7 +21,7 @@ class Message
     end
 
     def instructions
-        " I have generated a beginner sequence with four elements made up of:\n" + " " + "(r)ed".red + ", " + "(g)reen".green + ", " + "(b)lue".blue + ", " + "(y)ellow".yellow + ".\n You must guess the sequence using a four character code.\n You will be given 10 lives to guess the correct code.\n Use (q) to quit at any time to end the game.\n What’s your guess?"
+        " I have generated a beginner sequence with four elements made up of:\n" + " " + "(r)ed".red + ", " + "(g)reen".green + ", " + "(b)lue".blue + ", " + "(y)ellow".yellow + ".\n You must guess the sequence using a four character code.\n You will be given 10 lives to guess the correct code.\n"
 
     end
 
