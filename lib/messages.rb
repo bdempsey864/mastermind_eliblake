@@ -26,15 +26,10 @@ class Message
 
     def instructions
         " I have generated a beginner sequence with four elements made up of:\n" + " " + "(r)ed".red + ", " + "(g)reen".green + ", " + "(b)lue".blue + ", " + "(y)ellow".yellow + ".\n You must guess the sequence using a four character code.\n You will be given 10 lives to guess the correct code.\n"
-
     end
 
     def cheat(secret_code)
         "secret code is " + "#{secret_code}"
-    end
-
-    def incorrect_length
-        "please enter a valid code (4 characters)"
     end
 
     def incorrect_color
