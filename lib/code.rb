@@ -4,7 +4,7 @@ class Code
 
     def initialize
         @available_colors = ['r', 'b', 'g', 'y']
-        @secret_code = []
+        @secret_code      = []
     end 
 
     def make_secret_code

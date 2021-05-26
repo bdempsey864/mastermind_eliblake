@@ -9,10 +9,10 @@ class Game
     def initialize
         puts "WELCOME".yellow + " " + "TO".red + " " + "MASTER".green + " " + "MIND".blue
         puts " "
-        @message = Message.new
-        @player = Player.new
-        @code = Code.new
-        @lives = 10
+        @message    = Message.new
+        @player     = Player.new
+        @code       = Code.new
+        @lives      = 10
         @start_time = Time.now
     end
 
@@ -28,7 +28,7 @@ class Game
 
     def game_menu # fixed
         play = game_input
-        if play == "r"
+        if play    == "r"
             puts @message.instructions
             puts @message.game_intro
             game_menu
@@ -57,7 +57,7 @@ class Game
 
     def reset
         @code.secret_code.clear
-        @lives = 10
+        @lives      = 10
         @start_time = Time.now
         start
     end
@@ -71,7 +71,7 @@ class Game
         until game_lost? || game_won?
             @player.guessed_code.clear
             player_turn = @player.guess_code
-            if player_turn == ["q"]
+            if player_turn    == ["q"]
                 puts @message.quit_message
             elsif player_turn == ["r"] 
                 puts @message.instructions

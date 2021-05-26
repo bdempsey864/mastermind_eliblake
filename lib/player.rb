@@ -1,7 +1,8 @@
 require './code'
 
 class Player
-    attr_reader :guessed_code, :secret_code
+    attr_reader :guessed_code, 
+                :secret_code
     def initialize
         @guessed_code = []
     end
